@@ -2,6 +2,9 @@
 
 This source code has been made available to demonstrate the different ways that 3rd parties can integrate with DriveWorks using the DriveWorks API.
 
+This code is provided under the MIT license,
+for more details see [LICENSE.md](https://github.com/DriveWorks/Labs-Integration-Example/blob/master/LICENSE.md).
+
 The example requires that you have the latest DriveWorks SDK installed and operational.
 
 There are a number of integration points, and each one will be documented below.
