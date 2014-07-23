@@ -371,11 +371,11 @@ Public Class IntegrationCore
 
 
             ' then report on it being added
-            LogMessage(ApplicationEventType.Success, "EXAMPLEIntegration", String.Format("The file '{0}' has been successfully registered"), "Document Registered", Nothing)
+            LogMessage(ApplicationEventType.Success, "EXAMPLEIntegration", String.Format("The file '{0}' has been successfully registered", filePath), "Document Registered", Nothing)
         Catch ex As Exception
 
             ' It went wrong, log it
-            LogMessage(ApplicationEventType.Error, "EXAMPLEIntegration", String.Format("The file '{0}' could not be registered"), "Exception", ex)
+            LogMessage(ApplicationEventType.Error, "EXAMPLEIntegration", String.Format("The file '{0}' could not be registered", filePath), "Exception", ex)
         End Try
 
     End Sub
