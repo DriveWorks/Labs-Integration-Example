@@ -3,7 +3,8 @@ Imports System.Runtime.CompilerServices
 Imports DriveWorks
 
 Public Module ProjectExtensions
-    ReadOnly mSharedObjectsTable As New ConditionalWeakTable(Of Project, SharedObjectContainer)()
+
+    Private ReadOnly sSharedObjectsTable As New ConditionalWeakTable(Of Project, SharedObjectContainer)()
 
     <Extension>
     Public Function GetSharedObject(Of T As {Class, New})(ByVal project As Project) As T
@@ -11,7 +12,7 @@ Public Module ProjectExtensions
             Return Nothing
         End If
 
-        Return mSharedObjectsTable.GetOrCreateValue(project).GetOrCreate(Of T)()
+        Return sSharedObjectsTable.GetOrCreateValue(project).GetOrCreate(Of T)()
     End Function
 
     Private Class SharedObjectContainer
@@ -34,7 +35,3 @@ Public Module ProjectExtensions
         End Class
     End Class
 End Module
-
-
-
-

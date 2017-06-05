@@ -58,7 +58,6 @@ Public NotInheritable Class IntegrationPlugIn
 
         ' Load settings
         Me.LoadSettings()
-
     End Sub
 
     Public Sub ShowConfiguration(owner As IWin32Window) Implements IHasConfiguration.ShowConfiguration

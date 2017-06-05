@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/DriveWorks.Applications.Autopilot.Connectors" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/DriveWorks.Applications.Autopilot.Connectors" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="SpecificationRequestResult">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotAvailable" />
+      <xs:enumeration value="FailedNoReason" />
+      <xs:enumeration value="FailedInvalidTransitionNameOrTransitionDisabledByConditions" />
+      <xs:enumeration value="FailedInvalidSpecificationName" />
+      <xs:enumeration value="FailedInvalidProjectName" />
+      <xs:enumeration value="Succeeded" />
+      <xs:enumeration value="SucceededWithInputWarnings" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SpecificationRequestResult" nillable="true" type="tns:SpecificationRequestResult" />
+</xs:schema>

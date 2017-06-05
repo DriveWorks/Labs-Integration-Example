@@ -10,7 +10,8 @@
     <AssemblyName>DriveWorks.Integration.Example</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Windows</MyType>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -47,17 +48,25 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DriveWorks.Applications, Version=9.3.0.121, Culture=neutral, PublicKeyToken=6a7b6697bc4ff5ec, processorArchitecture=MSIL">
+    <Reference Include="DriveWorks.Applications">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\DriveWorks\9.3\SDK\ReferenceAssemblies\DriveWorks.Applications.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\DriveWorks\15.0\SDK\ReferenceAssemblies\DriveWorks.Applications.dll</HintPath>
     </Reference>
-    <Reference Include="DriveWorks.Engine, Version=9.3.0.121, Culture=neutral, PublicKeyToken=6a7b6697bc4ff5ec, processorArchitecture=MSIL">
+    <Reference Include="DriveWorks.Engine">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\DriveWorks\9.3\SDK\ReferenceAssemblies\DriveWorks.Engine.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\DriveWorks\15.0\SDK\ReferenceAssemblies\DriveWorks.Engine.dll</HintPath>
     </Reference>
-    <Reference Include="DriveWorks.SolidWorks, Version=9.3.0.121, Culture=neutral, PublicKeyToken=6a7b6697bc4ff5ec, processorArchitecture=MSIL">
+    <Reference Include="DriveWorks.SolidWorks">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\DriveWorks\9.3\SDK\ReferenceAssemblies\DriveWorks.SolidWorks.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\DriveWorks\15.0\SDK\ReferenceAssemblies\DriveWorks.SolidWorks.dll</HintPath>
+    </Reference>
+    <Reference Include="SolidWorks.Interop.sldworks">
+      <HintPath>..\References\SolidWorks.Interop.sldworks.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Titan.Rules">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DriveWorks\15.0\SDK\ReferenceAssemblies\Titan.Rules.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -68,10 +77,6 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Titan.Rules, Version=9.3.0.121, Culture=neutral, PublicKeyToken=6a7b6697bc4ff5ec, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\DriveWorks\9.3\SDK\ReferenceAssemblies\Titan.Rules.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
@@ -119,7 +124,12 @@
     <Compile Include="Plugin\PlugInSettingsForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Plugin\ProjectPlugin.vb" />
     <Compile Include="Tasks\ExampleCreateAccount.vb" />
+    <Compile Include="SolidWorks\SpecificationConditions\FunComponentSpecificationCondition.vb" />
+    <Compile Include="SolidWorks\GenerationConditions\MassGenerationCondition.vb" />
+    <Compile Include="SolidWorks\GenerationTasks\MessageBoxGenerationTask.vb" />
+    <Compile Include="Tasks\PackageGroupTask.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -143,7 +153,9 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

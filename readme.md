@@ -1,4 +1,4 @@
-## DriveWorks Integration Example source code. ##
+## DriveWorks Integration Example source code.
 
 This source code has been made available to demonstrate the different ways that 3rd parties can integrate with DriveWorks using the DriveWorks API.
 
@@ -9,7 +9,7 @@ The example requires that you have the latest DriveWorks SDK installed and opera
 
 There are a number of integration points, and each one will be documented below.
 
-### User Definable Functions. ###
+### User Definable Functions.
 
 The plugin contains a shared project extender that has a number of functions for pulling data FROM the 3rd party system, into DriveWorks.  
 
@@ -43,7 +43,7 @@ In this case the Shared Project Extender has GetConnectionManager function that 
 
 Each function is then called through the connection manager using `RunWithRetry` that will ensure 3 attempts are made to perform the function in the case of a lost connection (or any exception).  This is especially relevant if the 3rd party system is being connected to through web services where there is a risk of a dropped connection.
 
-###Specification Tasks###
+### Specification Tasks
 
 This integration has been created with a single task that will be added to the Specification toolbox in the Specification Macros section in DriveWorks Administrator, as well as on the Toolbox in the tasks for each State in Specification flow.
 
@@ -70,7 +70,7 @@ The actual task is in a separate class that will be discussed later, and is call
 
 This example shows retrieving account data from the specification as individual flow properties.  It would also be reasonable to pass through a variable category and then have the task pull variable values from that category, or pass in a pipebar delimited text string and have the task parse the string.
 
-###Specification Events###
+### Specification Events
 
 This example has also been created to respond to specification events.  This means that you can add code that will communicate with your 3rd Party system, for instance, after a transition has been run.  The main benefit of this is that some of these events are raise once a specification has been closed, or after a document has been registered.  You could also have a parent specification react to a child specification being closed.
 
@@ -90,7 +90,7 @@ The specificationContextHandler is passed an instance of integrationcore which w
 
 One of the events, `mContext.DocumentRegistered`, shows how a document created by DriveWorks can be registered in the 3rd party system, with logging.
 
-###Model Generation Events###
+### Model Generation Events
 
 As well as specification events, DriveWorks raises events when generating 3D models in SolidWorks as well as 2D Drawings.
 
@@ -135,7 +135,7 @@ From the drawing context, the released drawing as well as the released model obj
 
 Remember to handle all exceptions so that DriveWorks doesn’t have to.
 
-###Settings###
+### Settings
 
 Since there may be settings required (such as stored usernames and passwords, as well as possible connection strings) this integration example has a settings class that will get and set registry entries on each machine.
 
@@ -163,7 +163,7 @@ Adding more settings is a simple case of copying the existing ones, taking care 
 
 The plugin settings screen also has a test button to which you can add code to either test your connection or test the actual communication.
 
-###Plugin Library###
+### Plugin Library
 
 The plugin example gets loaded into DriveWorks through the IntegrationPlugIn class.  This class is passed the application object when it is initialised.
 
@@ -180,7 +180,7 @@ This means that multiple calls from the same application (for instance through m
 
 The main plugin class also saves and loads all of the settings, as well as launches the Plugin settings form.
 
-###Reporting###
+### Reporting
 
 Plugins can add information into the applications reporting (for instance the Autopilot log and the log on the settings screen.  Plugins can also write data to a specification report.
 
@@ -192,7 +192,7 @@ This class implements IApplicationEventService and is passed a specification rep
 
 It then normalises the different reporting enums.
 
-###Connections###
+### Connections
 
 Connections to the 3rd party system are handled through a connectionmanager class that stores the settings and project, and can create and destroy an instance of IntegrationCore, where all of the 3rd party connection code resides.
 
@@ -210,7 +210,7 @@ The connections class is called as a shared instance to hold a pointer to the se
 
 ProjectExtensions is used to ensure that when a project or specification is disposed, the connection manager, and therefore the instance of IntegrationCore is also disposed.  It has a ConditionalWeakTable that it uses to maintain the list of connections.
 
-###Integration Code###
+### Integration Code
 
 Everything covered so far has been concerned with using the DriveWorks API to handle events and integrate into projects and specifications.
 
@@ -227,13 +227,3 @@ The example code shows methods and functions that respond to events raise by Dri
 The LogMessage method uses the logging service that is passed in, and that normalises the reporting.
 
 The example also has stub methods for checking the connection status to your third party system.
-
-
-
-
-
-
-
-
-
-

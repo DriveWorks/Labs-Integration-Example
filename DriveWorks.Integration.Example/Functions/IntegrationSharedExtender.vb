@@ -11,7 +11,7 @@ Public Class IntegrationSharedExtender
     End Function
 
     <Udf()>
-   <FunctionInfo("Returns a String value that describes the current status of the connection to the third party system")>
+    <FunctionInfo("Returns a String value that describes the current status of the connection to the third party system")>
     Public Function EXAMPLEConnectionStatus(<ParamInfo("Trigger", "Change this value in order to re-evaluate the function")> trigger As Object) As String
 
         Try
@@ -25,7 +25,7 @@ Public Class IntegrationSharedExtender
     End Function
 
     <Udf()>
- <FunctionInfo("Returns a Boolean value representing if the connection to the 3rd party system is open")>
+    <FunctionInfo("Returns a Boolean value representing if the connection to the 3rd party system is open")>
     Public Function EXAMPLEConnected(<ParamInfo("Trigger", "Change this value in order to re-evaluate the function")> trigger As Object) As Object
 
         Try
@@ -39,7 +39,7 @@ Public Class IntegrationSharedExtender
     End Function
 
     <Udf()>
-<FunctionInfo("Returns the 3rd Party connection string, based on the settings for this plugin")>
+    <FunctionInfo("Returns the 3rd Party connection string, based on the settings for this plugin")>
     Public Function EXAMPLEConnectionString() As String
 
         Try
@@ -53,7 +53,7 @@ Public Class IntegrationSharedExtender
     End Function
 
     <Udf()>
-<FunctionInfo("Returns the 3rd Party username, based on the settings for this plugin")>
+    <FunctionInfo("Returns the 3rd Party username, based on the settings for this plugin")>
     Public Function EXAMPLEUserName() As String
 
         Try
@@ -68,7 +68,7 @@ Public Class IntegrationSharedExtender
 
 
     <Udf()>
-<FunctionInfo("Returns a table array including headers of all of the account details for all accounts")>
+    <FunctionInfo("Returns a table array including headers of all of the account details for all accounts")>
     Public Function EXAMPLEGetAccounts(<ParamInfo("Filter Text", "Text to use for filtering the accounts")> filterText As String) As Object
 
         Try
@@ -82,7 +82,7 @@ Public Class IntegrationSharedExtender
     End Function
 
     <Udf()>
-<FunctionInfo("Returns a table array including headers of all of the contacts for a specific account")>
+    <FunctionInfo("Returns a table array including headers of all of the contacts for a specific account")>
     Public Function EXAMPLEGetContacts(<ParamInfo("AccountID", "The accountID for who contacts will be retrieved (leave blank to get all contacts)")> accountID As String) As Object
 
         Try
@@ -96,7 +96,7 @@ Public Class IntegrationSharedExtender
     End Function
 
     <Udf()>
-<FunctionInfo("Returns a table array including headers of all of the items")>
+    <FunctionInfo("Returns a table array including headers of all of the items")>
     Public Function EXAMPLEGetItems(<ParamInfo("Filter Text", "Text to use for filtering the items")> filterText As String) As Object
 
         Try
@@ -110,7 +110,7 @@ Public Class IntegrationSharedExtender
     End Function
 
     <Udf()>
-<FunctionInfo("Returns a table array including headers of all of the items in a specific BOM")>
+    <FunctionInfo("Returns a table array including headers of all of the items in a specific BOM")>
     Public Function EXAMPLEGetBOMItems(<ParamInfo("BOMID", "The BOMID for which items will be retrieved.")> bomID As String) As Object
 
         Try
