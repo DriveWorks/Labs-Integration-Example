@@ -1,5 +1,7 @@
 ## DriveWorks Integration Example source code.
 
+Compiles directly for DriveWorks 15, 16 and 17
+
 This source code has been made available to demonstrate the different ways that 3rd parties can integrate with DriveWorks using the DriveWorks API.
 
 This code is provided under the MIT license,
